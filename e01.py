@@ -42,6 +42,7 @@ A2 = (5, 5, 5, 7, 2, 3, 5)
 A3 = (2, 5, 5, 7, 2, 3, 5)
 A4 = (2, 5, 5, 7, 5, 3, 5)
 A5 = (5, 5, 1, 7, 5, 3, 5)
+A6 = (5, 4, 5, 5, 5, 5, 5)
 
 
 def get_k(x, a: list):
@@ -78,3 +79,5 @@ k = get_k(2, A4)
 assert k == 6, "k = {}".format(k)
 k = get_k(2, A5)
 assert k == -1, "k = {}".format(k)
+k = get_k(5, A6)
+assert k == 1, "k = {}".format(k)
