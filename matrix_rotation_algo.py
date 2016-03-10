@@ -31,18 +31,19 @@ for i in range(nestings):
 for i in range(nestings):
     last_c = N - i - 1
     last_r = M - i - 1
-    # left - bottom
-    for j in range(i + 1, last_r):
-        matrix[j][i] = rotated_lists[i].pop()
-    # bottom - right
+    n = 0
     for j in range(i, last_c):
-        matrix[last_r][j] = rotated_lists[i].pop()
-    # right - top
+        matrix[i][j] = rotated_lists[i][n]
+        n += 1
+    for j in range(i, last_r):
+        matrix[j][last_c] = rotated_lists[i][n]
+        n += 1
+    for j in range(last_c, i, -1):
+        matrix[last_r][j] = rotated_lists[i][n]
+        n += 1
     for j in range(last_r, i, -1):
-        matrix[j][last_c] = rotated_lists[i].pop()
-    # top - left
-    for j in range(last_c, i - 1, -1):
-        matrix[i][j] = rotated_lists[i].pop()
+        matrix[j][i] = rotated_lists[i][n]
+        n += 1
 
 for i in range(M):
     print(" ".join(matrix[i]))
