@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <limits.h>
 
+// https://www.hackerrank.com/challenges/icecream-parlor
+
 int main() {
     int t;
     scanf("%d", &t);
